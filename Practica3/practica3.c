@@ -44,10 +44,7 @@ regresa_si_es_caido(int rank, int size)
     time_t t;
     srand(time (&t) + rank);
     double auxiliar = (double)rand() / RAND_MAX;
-    if (auxiliar < 0.20)
-      es_caido = 1;
-    else
-      es_caido = 0;
+    es_caido = (auxiliar < 0.20)? 1: 0;
   } 
   return es_caido;
 }
@@ -62,10 +59,8 @@ tiempo_respuesta(int rank, int es_caido)
 {
   time_t t;
   srand(time (&t) + rank);
-  if (es_caido)
-    return rand() % (100 + 1 - 61) + 61;
-  else
-    return rand() % (60 + 1 - 0) + 0;
+  return (es_caido)? rand() % (100 + 1 - 61) + 61:
+    rand() % (60 + 1 - 0) + 0;
 }
 
 int
