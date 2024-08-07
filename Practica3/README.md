@@ -1,4 +1,4 @@
-# Prácticca 3
+# Práctica 3
 
 Se implementa el algoritmo del Abusón.  
 
